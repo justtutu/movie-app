@@ -1,0 +1,19 @@
+/* pages/detail/detail.wxss */
+.container{
+  background-color: #a0938b;
+  text-align: left;
+  color: #fffffd;
+}
+.image{
+  width: 150rpx;
+}
+.title{
+  font-weight: bold;
+}
+.avatar-container{
+  display: flex;
+  justify-content: space-between;
+}
+.avatar{
+  width: 150rpx;
+}

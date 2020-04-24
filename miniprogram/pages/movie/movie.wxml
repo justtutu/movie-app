@@ -1,0 +1,12 @@
+<!--miniprogram/pages/movie/movie.wxml-->
+<view wx:for="{{movieList}}" wx:key="index" class="movie-container" >
+	<image src="{{item.images.medium}}" class="movie-image"></image>
+	<view class="content">
+		<view class="title">{{item.title}}</view>
+		<view >观众评分：<text class="rate">{{item.rating.average}}</text>  </view>
+		<view>主演：<text wx:for="{{item.directors}}" wx:key="index">
+			{{item.name}}</text></view>
+		<view>年份： {{item.year}}</view>
+	<van-button type="warning" size="small" bindtap="goDetail" data-movieid="{{item.id}}">评价</van-button>
+	</view>
+</view>

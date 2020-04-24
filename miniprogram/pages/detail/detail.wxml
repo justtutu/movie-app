@@ -1,0 +1,22 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+<view class="top">
+	<image class="image" src="{{info.images.large}}"></image>
+  <view>
+    <view>{{item.title}}</view>
+    <view>
+    <text wx:for="{{item.countries}}" wx:key="index">{{item}}</text>/
+    <text wx:for="{{item.genres}}" wx:key="index">{{item}}</text>
+    </view>
+  </view>
+</view>
+	<view class="title">演员职表</view>
+	<view class="avatar-container">
+		<view wx:for="{{info.casts}}" wx:key="index" class="avatarr">
+			<image class="avatar" src="{{item.avatars.large}}"></image>
+			<view>{{item.name}}</view>
+		</view>
+	</view>
+	<view class="title">简介</view>
+	<view>{{info.summary}}</view>
+</view>
