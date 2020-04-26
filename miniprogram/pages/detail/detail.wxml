@@ -1,22 +1,39 @@
 <!--pages/detail/detail.wxml-->
-<view class="container">
-<view class="top">
-	<image class="image" src="{{info.images.large}}"></image>
-  <view>
-    <view>{{item.title}}</view>
-    <view>
-    <text wx:for="{{item.countries}}" wx:key="index">{{item}}</text>/
-    <text wx:for="{{item.genres}}" wx:key="index">{{item}}</text>
-    </view>
-  </view>
-</view>
-	<view class="title">演员职表</view>
-	<view class="avatar-container">
+<view class="detail-wrap">
+	<view class="top">
+		<image class="image" src="{{info.images.large}}"></image>
+		<view class="info">
+			<view class="title">{{info.title}}</view>
+			<view>
+				<text wx:for="{{info.countries}}" wx:key="index">{{item}}</text>
+				<text class="divider">/</text>
+				<text wx:for="{{info.genres}}" wx:key="index" class="genre">{{item}}</text>
+				上映时间：{{info.pubdate}}
+				<text class="divider">/</text>片长：{{info.durations[0]}}
+			</view>
+			<view class="average">{{info.rating.average}}</view>
+		</view>
+	</view>
+		<view class="title">演员职表</view>
+	<view class="avatar-wrap">
 		<view wx:for="{{info.casts}}" wx:key="index" class="avatarr">
-			<image class="avatar" src="{{item.avatars.large}}"></image>
-			<view>{{item.name}}</view>
+			<image class="avatar" src="{{item.avatars.small}}"></image>
+			<view class="name">{{item.name}}</view>
 		</view>
 	</view>
 	<view class="title">简介</view>
-	<view>{{info.summary}}</view>
+	<view class="summary">{{info.summary}}</view>
+	<view>
+		<view>
+			<van-rate value="{{ rate }}" bind:change="changeRate" />
+		</view>
+		<van-cell-group>
+			<van-field value="{{ comment }}" placeholder="请输入评价" border="{{ false }}" bind:change="changeComment" />
+		</van-cell-group>
+		<van-button type="warning" size="small" bindtap="uploadImages">上传图片</van-button>
+		<van-button type="danger" size="small" bindtap="doComment">提交评价</van-button>
+		<view>
+		<image wx:for="{{images}}" src="{{item}}" wx:key="index" class="comment-image"></image>
+		</view>
+	</view>
 </view>

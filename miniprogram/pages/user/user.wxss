@@ -1,1 +1,29 @@
 /* miniprogram/pages/user/user.wxss */
+.user{
+  width: 100%;
+  height: 400rpx;
+  background:#f73f37 ;
+  position: relative;
+}
+.user-image{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.name{
+  text-align: center;
+}
+.avatar{
+  width: 200rpx;
+  border-radius: 100rpx;
+}
+.btn{
+  width: 50%;
+  background: #f73f37;
+  color: #fff;
+}

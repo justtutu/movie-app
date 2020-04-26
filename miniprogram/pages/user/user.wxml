@@ -1,2 +1,10 @@
 <!--miniprogram/pages/user/user.wxml-->
-<text>miniprogram/pages/user/user.wxml</text>
+<view class="user">
+<view class="user-image">
+	<open-data type="userAvatarUrl" class="avatar"></open-data>
+</view>
+</view>
+<view class="name">
+<open-data type="userNickName"></open-data>
+</view>
+<button size="large" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="btn">获取用户信息</button>

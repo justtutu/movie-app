@@ -7,6 +7,6 @@
 		<view>主演：<text wx:for="{{item.directors}}" wx:key="index">
 			{{item.name}}</text></view>
 		<view>年份： {{item.year}}</view>
-	<van-button type="warning" size="small" bindtap="goDetail" data-movieid="{{item.id}}">评价</van-button>
+	<van-button type="danger" size="small" bindtap="goDetail" data-movieid="{{item.id}}">评价</van-button>
 	</view>
 </view>
